@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 #root {
-  max-width: 850px;
+  max-width: 80%;
   margin: 0 auto;
 }
 nav {
