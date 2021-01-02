@@ -7,18 +7,19 @@ import CurriculumsPage from './curriculums/CurriculumsPage';
 import HomePage from './home/HomePage';
 import PageNotFound from './PageNotFound';
 
-export default function App() {
-    return (
-        <div className="container-fluid">
-            <Header />
-            <Switch>
-                <Route exact path='/' component={HomePage} />
-                <Route path='/about' component={AboutPage} />
-                <Route path="/curriculum/:slug" component={CurriculumPage} />
-                <Route path="/curriculums" component={CurriculumsPage} />
-                <Route component={PageNotFound} />
-            </Switch>
-        </div>
-    )
-} 
+const App: React.FC = () => {
+  return (
+    <div className="container-fluid">
+      <Header />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/about" component={AboutPage} />
+        <Route path="/curriculum/:slug" component={CurriculumPage} />
+        <Route path="/curriculums" component={CurriculumsPage} />
+        <Route component={PageNotFound} />
+      </Switch>
+    </div>
+  );
+};
 
+export default App;

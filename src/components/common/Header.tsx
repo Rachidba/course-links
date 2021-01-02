@@ -1,21 +1,23 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
-export default function Header() {
-    const activeStyle = { color: "#F15B2A" };
-    return (
-        <nav>
-            <NavLink to="/" activeStyle={activeStyle} exact>
-                Home
-            </NavLink>
-            {" | "}
-            <NavLink to="/curriculums" activeStyle={activeStyle}>
-                Curriculums
-            </NavLink>
-            {" | "}
-            <NavLink to="/about" activeStyle={activeStyle}>
-                About
-            </NavLink>
-        </nav>
-    );
-}
+const Header: React.FC = () => {
+  const activeStyle = { color: '#F15B2A' };
+  return (
+    <nav>
+      <NavLink to="/" activeStyle={activeStyle} exact>
+        Home
+      </NavLink>
+      {' | '}
+      <NavLink to="/curriculums" activeStyle={activeStyle}>
+        Curriculums
+      </NavLink>
+      {' | '}
+      <NavLink to="/about" activeStyle={activeStyle}>
+        About
+      </NavLink>
+    </nav>
+  );
+};
+
+export default Header;

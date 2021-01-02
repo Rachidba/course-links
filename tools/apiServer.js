@@ -11,10 +11,10 @@ Relevant source code: https://github.com/typicode/json-server/blob/master/src/cl
 */
 
 /* eslint-disable no-console */
-const jsonServer = require("json-server");
+const jsonServer = require('json-server');
 const server = jsonServer.create();
-const path = require("path");
-const router = jsonServer.router(path.join(__dirname, "db.json"));
+const path = require('path');
+const router = jsonServer.router(path.join(__dirname, 'db.json'));
 
 // Can pass a limited number of options to this to override (some) defaults. See https://github.com/typicode/json-server#api
 const middlewares = jsonServer.defaults();
@@ -26,7 +26,7 @@ server.use(middlewares);
 server.use(jsonServer.bodyParser);
 
 // Simulate delay on all requests
-server.use(function(req, res, next) {
+server.use(function (req, res, next) {
   setTimeout(next, 2000);
 });
 
@@ -34,14 +34,14 @@ server.use(function(req, res, next) {
 
 // Add createdAt to all POSTS
 server.use((req, res, next) => {
-  if (req.method === "POST") {
+  if (req.method === 'POST') {
     req.body.createdAt = Date.now();
   }
   // Continue to JSON Server router
   next();
 });
 
-server.post("/curriculums/", function(req, res, next) {
+server.post('/curriculums/', function (req, res, next) {
   const error = validateCurriculum(req.body);
   if (error) {
     res.status(400).send(error);
@@ -65,11 +65,11 @@ server.listen(port, () => {
 // Returns a URL friendly slug
 function createSlug(value) {
   return value
-    .replace(/[^a-z0-9_]+/gi, "-")
-    .replace(/^-|-$/g, "")
+    .replace(/[^a-z0-9_]+/gi, '-')
+    .replace(/^-|-$/g, '')
     .toLowerCase();
 }
 
 function validateCurriculum(curriculum) {
-  return "";
+  return '';
 }

@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-export default function AboutPage() {
-    return (
-        <div>
-            About page
-        </div>
-    )
-}
+const AboutPage: React.FC = () => {
+  return <div>About page</div>;
+};
+
+export default AboutPage;
