@@ -11,7 +11,7 @@ const curriculums = [
         order: 1,
         title: 'A Complete Web Development Learning Path',
         description:
-          "Web Development is complex, there are so many technologies you might've heard of. Here's a simple and clear path on how to become a web developer today!",
+          "Web Development is complex, there are so many technologies you might've heard of. Here's a simple and clear path on how to become a web developer today!  Web Development is complex, there are so many technologies you might've heard of. Here's a simple and clear path on how to become a web developer today! ",
         link:
           'https://www.youtube.com/watch?v=2-akTTZyrcM&ab_channel=Academind',
         type: 'ENUM_YOUTUBE',
