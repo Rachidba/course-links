@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import AboutPage from './about/AboutPage';
-import Header from './common/Header';
+import Navbar from './common/navbar/Navbar';
 import CurriculumPage from './curriculums/CurriculumPage';
 import CurriculumsPage from './curriculums/CurriculumsPage';
 import HomePage from './home/HomePage';
@@ -10,8 +10,8 @@ import Container from '@material-ui/core/Container';
 
 const App: React.FC = () => {
   return (
-    <div className="container-fluid">
-      <Header />
+    <div className="">
+      <Navbar />
       <Container>
         <Switch>
           <Route exact path="/" component={HomePage} />
