@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(2),
     margin: 'auto',
-    maxWidth: '100%',
+    width: '100%',
     display: 'grid',
     overflow: 'auto',
     gridTemplateColumns: '1fr 2fr 1fr',
