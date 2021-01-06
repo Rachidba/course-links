@@ -19,4 +19,3 @@ app.get('/', (_req: Request, res: Response) => {
 });
 
 app.listen(5000, () => console.log('Server runnig on port 5000'));
-
