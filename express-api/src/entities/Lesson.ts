@@ -3,10 +3,10 @@ import {
   PrimaryColumn,
   Column,
   BeforeInsert,
-  ManyToOne,
+  OneToMany,
 } from 'typeorm';
 import * as uuid from 'uuid';
-import Curriculum from './Curriculum';
+import Resource from './Resource';
 
 @Entity('lessons')
 export default class Lesson {
@@ -16,17 +16,23 @@ export default class Lesson {
   @Column('varchar', { length: 150 })
   title: string;
 
+  @Column('varchar', { length: 255 })
+  slug: string;
+
   @Column('varchar', { length: 765 })
   description: string;
 
-  @Column('varchar', { length: 255 })
-  link: string;
-
-  @ManyToOne(() => Curriculum, (curriculum) => curriculum.lessons)
-  curriculum: Curriculum;
+  @OneToMany(() => Resource, (resource) => resource.lesson)
+  resources: Resource[];
 
   @BeforeInsert()
   addIdAndSlug(): void {
     this.id = uuid.v4();
+    this.slug = this.title
+      .toLowerCase()
+      .split(' ')
+      .join('-')
+      .concat('-')
+      .concat(this.id);
   }
 }

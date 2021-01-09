@@ -7,7 +7,7 @@ import cors from 'cors';
 import routes from './routes';
 
 createConnection()
-  .then(async (_connection) => {
+  .then(async () => {
     const app: Application = express();
 
     app.use(cors());

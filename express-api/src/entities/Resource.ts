@@ -3,36 +3,30 @@ import {
   PrimaryColumn,
   Column,
   BeforeInsert,
-  OneToMany,
+  ManyToOne,
 } from 'typeorm';
 import * as uuid from 'uuid';
 import Lesson from './Lesson';
 
-@Entity('curriculums')
-export default class Curriculum {
+@Entity('ressources')
+export default class Resource {
   @PrimaryColumn('uuid')
   id: string;
 
   @Column('varchar', { length: 150 })
   title: string;
 
-  @Column('varchar', { length: 255 })
-  slug: string;
-
   @Column('varchar', { length: 765 })
   description: string;
 
-  @OneToMany(() => Lesson, (lesson) => lesson.curriculum)
-  lessons: Lesson[];
+  @Column('varchar', { length: 255 })
+  link: string;
+
+  @ManyToOne(() => Lesson, (lesson) => lesson.resources)
+  lesson: Lesson;
 
   @BeforeInsert()
   addIdAndSlug(): void {
     this.id = uuid.v4();
-    this.slug = this.title
-      .toLowerCase()
-      .split(' ')
-      .join('-')
-      .concat('-')
-      .concat(this.id);
   }
 }
