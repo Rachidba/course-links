@@ -4,6 +4,7 @@ import {
   Column,
   BeforeInsert,
   OneToMany,
+  JoinColumn,
 } from 'typeorm';
 import * as uuid from 'uuid';
 import Resource from './Resource';
@@ -22,7 +23,10 @@ export default class Lesson {
   @Column('varchar', { length: 765 })
   description: string;
 
-  @OneToMany(() => Resource, (resource) => resource.lesson)
+  @OneToMany(() => Resource, (resource) => resource.lesson, {
+    cascade: true,
+  })
+  @JoinColumn()
   resources: Resource[];
 
   @BeforeInsert()

@@ -23,13 +23,13 @@ export default class User {
   @Length(4, 100)
   password: string;
 
-  @Column()
-  @Length(2, 50)
-  fname: string;
+  // @Column()
+  // @Length(2, 50)
+  // fname: string;
 
-  @Column()
-  @Length(2, 50)
-  lname: string;
+  // @Column()
+  // @Length(2, 50)
+  // lname: string;
 
   @Column()
   @IsNotEmpty()
