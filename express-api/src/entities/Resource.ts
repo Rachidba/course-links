@@ -8,7 +8,7 @@ import {
 import * as uuid from 'uuid';
 import Lesson from './Lesson';
 
-@Entity('ressources')
+@Entity('resources')
 export default class Resource {
   @PrimaryColumn('uuid')
   id: string;

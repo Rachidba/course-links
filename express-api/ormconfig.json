@@ -4,11 +4,11 @@
    "port": 5432,
    "username": "postgres",
    "password": "password",
-   "database": "curriculumsdevdb",
+   "database": "lessonsdb",
    "synchronize": true,
    "logging": false,
    "entities": [
-      "src/entity/**/*.ts"
+      "src/entities/**/*.ts"
    ],
    "migrations": [
       "src/migration/**/*.ts"
