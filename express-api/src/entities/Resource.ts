@@ -7,11 +7,16 @@ import {
 } from 'typeorm';
 import * as uuid from 'uuid';
 import Lesson from './Lesson';
+import { IsInt } from 'class-validator';
 
 @Entity('resources')
 export default class Resource {
   @PrimaryColumn('uuid')
   id: string;
+
+  @Column()
+  @IsInt()
+  order: number;
 
   @Column('varchar', { length: 150 })
   title: string;

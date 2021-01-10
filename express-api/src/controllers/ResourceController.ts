@@ -14,11 +14,12 @@ class ResourceController {
   };
   private static mapResources = (resources: any[]): Resource[] => {
     return resources.map((resource) => {
-      const { title, description, link } = resource;
+      const { title, description, link, order } = resource;
       const newResource = new Resource();
       newResource.title = title;
       newResource.description = description;
       newResource.link = link;
+      newResource.order = order;
       return newResource;
     });
   };
