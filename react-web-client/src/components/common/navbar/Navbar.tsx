@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
   };
   return (
     <nav className="navbar-items">
-      <h1 className="navbar-logo">Curriculum</h1>
+      <h1 className="navbar-logo">Logo</h1>
       <div className="menu-icon" onClick={handleMenuItemClick}>
         {isMenuOpen ? (
           <CloseIcon style={{ fontSize: 40 }} />

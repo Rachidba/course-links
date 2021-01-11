@@ -2,8 +2,8 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import AboutPage from './about/AboutPage';
 import Navbar from './common/navbar/Navbar';
-import CurriculumPage from './curriculums/CurriculumPage';
-import CurriculumsPage from './curriculums/CurriculumsPage';
+import LessonPage from './lessons/LessonPage';
+import LessonsPage from './lessons/LessonsPage';
 import HomePage from './home/HomePage';
 import PageNotFound from './PageNotFound';
 import Container from '@material-ui/core/Container';
@@ -16,8 +16,8 @@ const App: React.FC = () => {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/about" component={AboutPage} />
-          <Route path="/curriculum/:slug" component={CurriculumPage} />
-          <Route path="/curriculums" component={CurriculumsPage} />
+          <Route path="/lessons/:slug" component={LessonPage} />
+          <Route path="/lessons" component={LessonsPage} />
           <Route component={PageNotFound} />
         </Switch>
       </Container>

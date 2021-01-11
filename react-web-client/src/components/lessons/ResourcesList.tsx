@@ -12,11 +12,11 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-interface ResourcesListProps {
+interface Props {
   resources: Resource[];
 }
 
-const ResourcesList: React.FC<ResourcesListProps> = ({ resources }) => {
+const ResourcesList: React.FC<Props> = ({ resources }) => {
   const classes = useStyles();
   return (
     <div className={classes.grid}>

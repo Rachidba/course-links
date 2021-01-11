@@ -45,11 +45,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-interface ResourceItemProps {
+interface Props {
   resource: Resource;
 }
 
-const ResourceItem: React.FC<ResourceItemProps> = ({ resource }) => {
+const ResourceItem: React.FC<Props> = ({ resource }) => {
   const classes = useStyles();
   return (
     <Paper className={classes.paper} elevation={3}>

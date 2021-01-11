@@ -1,4 +1,4 @@
-const curriculums = [
+const lessons = [
   {
     id: 1,
     ownerId: 1,
@@ -100,5 +100,5 @@ const curriculums = [
 ];
 
 module.exports = {
-  curriculums,
+  lessons,
 };

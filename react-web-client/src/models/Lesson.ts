@@ -1,6 +1,6 @@
 import { Resource } from './Resource';
 
-export interface Curriculum {
+export interface Lesson {
   id: number;
   ownerId: number;
   title: string;

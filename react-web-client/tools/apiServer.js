@@ -41,12 +41,12 @@ server.use((req, res, next) => {
   next();
 });
 
-server.post('/curriculums/', function (req, res, next) {
-  const error = validateCurriculum(req.body);
+server.post('/lessons/', function (req, res, next) {
+  const error = validateLesson(req.body);
   if (error) {
     res.status(400).send(error);
   } else {
-    req.body.slug = createSlug(req.body.title); // Generate a slug for new curriculums.
+    req.body.slug = createSlug(req.body.title);
     next();
   }
 });
@@ -70,6 +70,6 @@ function createSlug(value) {
     .toLowerCase();
 }
 
-function validateCurriculum(curriculum) {
+function validateLesson(_lesson) {
   return '';
 }
