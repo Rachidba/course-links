@@ -7,6 +7,7 @@ import LessonsPage from './lessons/LessonsPage';
 import HomePage from './home/HomePage';
 import PageNotFound from './PageNotFound';
 import Container from '@material-ui/core/Container';
+import CreateLessonPage from './lessons/CreateLessonPage';
 
 const App: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/about" component={AboutPage} />
+          <Route path="/create-lesson" component={CreateLessonPage} />
           <Route path="/lessons/:slug" component={LessonPage} />
           <Route path="/lessons" component={LessonsPage} />
           <Route component={PageNotFound} />
