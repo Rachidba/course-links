@@ -14,6 +14,7 @@ const theme = createMuiTheme({
     MuiButton: {
       root: {
         textTransform: 'none',
+        padding: '12px',
       },
     },
   },

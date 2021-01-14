@@ -1,4 +1,4 @@
-import { Button, TextareaAutosize, InputLabel } from '@material-ui/core';
+import { Button, Card, CardContent, Box } from '@material-ui/core';
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import InputField from '../common/InputField';
@@ -14,27 +14,41 @@ const CreateResourceForm: React.FC<Props> = ({ onSubmit }) => {
       initialValues={{ title: '', description: '', link: '', order: -1 }}
       onSubmit={(values) => onSubmit(values)}
     >
-      {({ values, handleChange, handleBlur }) => (
-        <Form>
-          <InputLabel htmlFor="title">Title</InputLabel>
-          <Field name="title" placeholder="Title" component={InputField} />
-          <InputLabel htmlFor="description">Description</InputLabel>
-          <TextareaAutosize
-            id="description"
-            value={values.description}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            aria-label="empty textarea"
-            placeholder="Description..."
-          />
-          <InputLabel htmlFor="link">Ressource URL</InputLabel>
-          <Field
-            name="link"
-            placeholder="Resource URL"
-            component={InputField}
-          />
-          <Button type="submit">Add resource</Button>
-        </Form>
+      {() => (
+        <Card>
+          <CardContent>
+            <Form>
+              <Box paddingBottom={2}>
+                <Field
+                  fullWidth
+                  name="title"
+                  label="Title"
+                  component={InputField}
+                />
+              </Box>
+              <Box paddingBottom={2}>
+                <Field
+                  fullWidth
+                  name="description"
+                  label="Description"
+                  multiline
+                  component={InputField}
+                />
+              </Box>
+              <Box paddingBottom={2}>
+                <Field
+                  fullWidth
+                  name="link"
+                  label="Resource URL"
+                  component={InputField}
+                />
+              </Box>
+              <Button type="submit" fullWidth>
+                Add resource to the lesson
+              </Button>
+            </Form>
+          </CardContent>
+        </Card>
       )}
     </Formik>
   );
