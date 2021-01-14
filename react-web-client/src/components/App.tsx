@@ -8,10 +8,12 @@ import HomePage from './home/HomePage';
 import PageNotFound from './PageNotFound';
 import Container from '@material-ui/core/Container';
 import CreateLessonPage from './lessons/CreateLessonPage';
+import { ThemeProvider } from '@material-ui/core/styles';
+import theme from './theme';
 
 const App: React.FC = () => {
   return (
-    <div className="">
+    <ThemeProvider theme={theme}>
       <Navbar />
       <Container>
         <Switch>
@@ -23,7 +25,7 @@ const App: React.FC = () => {
           <Route component={PageNotFound} />
         </Switch>
       </Container>
-    </div>
+    </ThemeProvider>
   );
 };
 
