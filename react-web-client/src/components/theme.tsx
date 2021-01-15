@@ -7,7 +7,7 @@ const theme = createMuiTheme({
     },
   },
   shape: {
-    borderRadius: 4,
+    borderRadius: 8,
   },
 
   overrides: {

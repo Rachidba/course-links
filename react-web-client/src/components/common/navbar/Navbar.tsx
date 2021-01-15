@@ -4,21 +4,7 @@ import './Navbar.css';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
 
-const BootstrapButton = withStyles({
-  root: {
-    backgroundColor: '#5657ff',
-    borderRadius: '8px',
-    boxShadow: 'none',
-    textTransform: 'none',
-    fontSize: '1rem',
-    marginTop: '0',
-    '&:hover': {
-      backgroundColor: '#4949EB',
-    },
-  },
-})(Button);
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const handleMenuItemClick = () => {
@@ -45,9 +31,7 @@ const Navbar: React.FC = () => {
           );
         })}
         <li>
-          <BootstrapButton variant="contained" color="primary" disableRipple>
-            Register
-          </BootstrapButton>
+          <Button disableRipple>Try for free</Button>
         </li>
       </ul>
     </nav>

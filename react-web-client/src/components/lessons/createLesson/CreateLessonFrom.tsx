@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       display: 'grid',
       rowGap: '5px',
-      justifyContent: 'center',
+      justifyContent: 'normal',
     },
   },
   button: {

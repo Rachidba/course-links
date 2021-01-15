@@ -5,6 +5,7 @@ import CreateResourceForm from './CreateResourceForm';
 import CreateLessonForm from './CreateLessonFrom';
 import ResourcesList from './../ResourcesList';
 import { Button } from '@material-ui/core';
+import CreatedLessonLink from './CreatedLessonLink';
 
 const CreateLessonPage: React.FC = () => {
   const [lesson, setLesson] = useState<Lesson>(emptyLesson);
@@ -14,8 +15,7 @@ const CreateLessonPage: React.FC = () => {
     setLesson({ ...lesson, resources: [...lesson.resources, values] });
   }
   function handleSubmit(values: Lesson) {
-    // values.order = lesson.resources.length + 1;
-    // setLesson({ ...lesson, resources: [...lesson.resources, values] });
+    nextStep();
     console.log('publish lesson', values);
   }
   function nextStep() {
@@ -31,8 +31,7 @@ const CreateLessonPage: React.FC = () => {
           <>
             {lesson.resources.length > 0 ? (
               <Button onClick={nextStep} fullWidth>
-                Continue lesson creation with {lesson.resources.length}{' '}
-                resources
+                Continue with {lesson.resources.length} resources
               </Button>
             ) : (
               <></>
@@ -45,6 +44,8 @@ const CreateLessonPage: React.FC = () => {
         return (
           <CreateLessonForm handlePrevStep={prevStep} onSubmit={handleSubmit} />
         );
+      case 3:
+        return <CreatedLessonLink lessonLink={'dsdfa'} />;
     }
   }
   return (
