@@ -9,3 +9,13 @@ export interface Lesson {
   link: string;
   resources: Array<Resource>;
 }
+
+export const emptyLesson = {
+  id: -1,
+  ownerId: -1,
+  title: '',
+  slug: '',
+  description: '',
+  link: '',
+  resources: [],
+};

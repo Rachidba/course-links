@@ -18,7 +18,7 @@ const InputField: React.FC<Props> = ({
     <TextField
       fullWidth={fullWidth}
       label={label}
-      rows={4}
+      rows={2}
       multiline={multiline}
       {...field}
     />

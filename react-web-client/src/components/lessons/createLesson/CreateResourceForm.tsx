@@ -1,8 +1,8 @@
-import { Button, Card, CardContent, Box } from '@material-ui/core';
+import { Button, Card, CardContent, Box, CardHeader } from '@material-ui/core';
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
-import InputField from '../common/InputField';
-import { Resource } from '../../models/Resource';
+import InputField from '../../common/InputField';
+import { Resource } from '../../../models/Resource';
 
 interface Props {
   onSubmit: (values: Resource) => void;
@@ -16,6 +16,7 @@ const CreateResourceForm: React.FC<Props> = ({ onSubmit }) => {
     >
       {() => (
         <Card>
+          <CardHeader title="Add a list of resources" />
           <CardContent>
             <Form>
               <Box paddingBottom={2}>

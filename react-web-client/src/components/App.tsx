@@ -7,7 +7,7 @@ import LessonsPage from './lessons/LessonsPage';
 import HomePage from './home/HomePage';
 import PageNotFound from './PageNotFound';
 import Container from '@material-ui/core/Container';
-import CreateLessonPage from './lessons/CreateLessonPage';
+import CreateLessonPage from './lessons/createLesson/CreateLessonPage';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from './theme';
 
