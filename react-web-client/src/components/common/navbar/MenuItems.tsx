@@ -9,9 +9,9 @@ export const MenuItems = [
     url: '#',
     cName: 'nav-link',
   },
-  {
-    title: 'Pricing',
-    url: '#',
-    cName: 'nav-link',
-  },
+  // {
+  //   title: 'Pricing',
+  //   url: '#',
+  //   cName: 'nav-link',
+  // },
 ];

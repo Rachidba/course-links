@@ -12,3 +12,7 @@
   display: flex;
   flex: 1 1 auto;
 }
+
+body {
+  background-color: #f2f2ff;
+}

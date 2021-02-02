@@ -34,7 +34,14 @@ const LessonPage: React.FC = () => {
           </a>
         </p>
       </div>
-      <ResourcesList resources={lesson?.resources ?? []} />
+      <ResourcesList
+        canDelete={false}
+        isConnectedStudend={false}
+        onDelete={() => {
+          return;
+        }}
+        resources={lesson?.resources ?? []}
+      />
     </div>
   );
 };

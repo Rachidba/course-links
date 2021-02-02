@@ -14,6 +14,20 @@ const CreateLessonPage: React.FC = () => {
     values.order = lesson.resources.length + 1;
     setLesson({ ...lesson, resources: [...lesson.resources, values] });
   }
+  function handleDeleteResource(order: number) {
+    const resources: Resource[] = [];
+    for (let i = 0; i < lesson.resources.length; i++) {
+      if (order != i + 1) {
+        resources.push({
+          order: resources.length + 1,
+          title: lesson.resources[i].title,
+          description: lesson.resources[i].description,
+          link: lesson.resources[i].link,
+        });
+      }
+    }
+    setLesson({ ...lesson, resources: resources });
+  }
   function handleSubmit(values: Lesson) {
     nextStep();
     console.log('publish lesson', values);
@@ -37,7 +51,12 @@ const CreateLessonPage: React.FC = () => {
               <></>
             )}
             <CreateResourceForm onSubmit={handleAddResource} />
-            <ResourcesList resources={lesson.resources} />
+            <ResourcesList
+              canDelete={true}
+              isConnectedStudend={false}
+              onDelete={handleDeleteResource}
+              resources={lesson.resources}
+            />
           </>
         );
       case 2:

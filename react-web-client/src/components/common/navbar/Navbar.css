@@ -36,10 +36,6 @@
   display: none;
 }
 .nav-link-button {
-  background: var(--primary-color);
-  border-radius: 8px;
-  color: var(--primary-color);
-  width: 30px;
   text-decoration: none;
 }
 @media screen and (max-width: 960px) {

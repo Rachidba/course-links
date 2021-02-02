@@ -1,11 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import { Resource } from '../../models/Resource';
 import Button from '@material-ui/core/Button';
 import CheckIcon from '@material-ui/icons/Check';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -17,7 +17,8 @@ const useStyles = makeStyles((theme) => ({
     gridTemplateColumns: '1fr 2fr 1fr',
     [theme.breakpoints.down('sm')]: {
       gridTemplateColumns: '1fr',
-      justifyItems: 'center',
+      justifyItems: 'normal',
+      width: '100%',
       textAlign: 'center',
     },
   },
@@ -47,10 +48,46 @@ const useStyles = makeStyles((theme) => ({
 
 interface Props {
   resource: Resource;
+  isConnectedStudend: boolean;
+  canDelete: boolean;
+  onDelete: (order: number) => void;
 }
 
-const ResourceItem: React.FC<Props> = ({ resource }) => {
+const ResourceItem: React.FC<Props> = ({
+  resource,
+  isConnectedStudend,
+  canDelete,
+  onDelete,
+}) => {
   const classes = useStyles();
+  function renderButton() {
+    if (isConnectedStudend) {
+      return (
+        <Button
+          variant="outlined"
+          size="large"
+          className={classes.button}
+          startIcon={<CheckIcon />}
+        >
+          Lessson completed
+        </Button>
+      );
+    } else if (canDelete) {
+      return (
+        <Button
+          variant="outlined"
+          size="large"
+          className={classes.button}
+          startIcon={<DeleteIcon />}
+          onClick={() => {
+            onDelete(resource.order);
+          }}
+        >
+          Delete resource
+        </Button>
+      );
+    }
+  }
   return (
     <Paper className={classes.paper} elevation={3}>
       <div>
@@ -58,7 +95,6 @@ const ResourceItem: React.FC<Props> = ({ resource }) => {
           <ButtonBase className={classes.image}>
             <img
               className={classes.img}
-              alt="complex"
               src="http://via.placeholder.com/300x180"
             />
           </ButtonBase>
@@ -68,18 +104,7 @@ const ResourceItem: React.FC<Props> = ({ resource }) => {
         <h3>{resource.title}</h3>
         <p>{resource.description}</p>
       </div>
-      <div className={classes.gridItemEnd}>
-        <Button
-          variant="outlined"
-          color="primary"
-          size="large"
-          className={classes.button}
-          startIcon={<CheckIcon />}
-          disabled={true}
-        >
-          <Typography variant="subtitle1">Lessson completed</Typography>
-        </Button>
-      </div>
+      <div className={classes.gridItemEnd}>{renderButton()}</div>
     </Paper>
   );
 };
